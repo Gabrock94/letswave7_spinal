@@ -476,7 +476,7 @@ GLW_my_view_OpeningFcn;
         end
         
         handles.toolbar2_topo = uitoggletool(handles.toolbar2,'Separator','on');
-        set(handles.toolbar2_topo,'TooltipString','topograph(4 limited)');
+        set(handles.toolbar2_topo,'TooltipString','topograph(4 limited) Giulio');
         set(handles.toolbar2_topo,'CData',icon.icon_topo);
         set(handles.toolbar2_topo,'ClickedCallback',{@fig_topo});
         
@@ -1398,7 +1398,7 @@ GLW_my_view_OpeningFcn;
         if userdata.is_topo
             ax_num=min(length(userdata.selected_datasets)*length(userdata.selected_epochs),4);
             ax_idx=0;
-            [xq,yq] = meshgrid(linspace(-0.5,0.5,67),linspace(-0.5,0.5,67));
+            [xq,yq] = meshgrid(linspace(-0.5,0.5,67),linspace(-4,0.5,67));
             for dataset_index=1:length(userdata.selected_datasets)
                 if(ax_idx>ax_num)
                     break;
@@ -1439,7 +1439,7 @@ GLW_my_view_OpeningFcn;
     function fig_topo_popup(~,~)
         if strcmp(get(gcf,'SelectionType'),'open')
             fig_temp=figure();
-            [xq,yq] = meshgrid(linspace(-0.5,0.5,267),linspace(-0.5,0.5,267));
+            [xq,yq] = meshgrid(linspace(-0.5,0.5,267),linspace(-4,0.5,267));
             delta = (xq(2)-xq(1))/2;
             ax_num=length(userdata.selected_datasets)*length(userdata.selected_epochs);
             row_num=length(userdata.selected_datasets);
@@ -1452,7 +1452,7 @@ GLW_my_view_OpeningFcn;
                 axes_topo(ax_idx)=subplot(row_num,col_num,ax_idx);
                 colormap(axes_topo(ax_idx),'jet');
                 set(axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-                set(axes_topo(ax_idx),'Ylim',[-0.5,0.6]);
+                set(axes_topo(ax_idx),'Ylim',[-4,0]);
                 caxis(axes_topo(ax_idx),userdata.last_axis(3:4));
                 hold(axes_topo(ax_idx),'on');
                 axis(axes_topo(ax_idx),'square');
@@ -1539,7 +1539,7 @@ GLW_my_view_OpeningFcn;
                 end
             end
             
-            [xq,yq] = meshgrid(linspace(-0.5,0.5,67),linspace(-0.5,0.5,67));
+            [xq,yq] = meshgrid(linspace(-0.5,0.5,67),linspace(-4,0.5,67));
             delta = (xq(2)-xq(1))/2;
             ax_num=min(length(userdata.selected_datasets)*length(userdata.selected_epochs),4);
             for ax_idx=1:ax_num
@@ -1548,7 +1548,7 @@ GLW_my_view_OpeningFcn;
                     colormap(handles.axes_topo(ax_idx),'jet');
                     caxis(handles.axes_topo(ax_idx),userdata.last_axis(3:4));
                     set(handles.axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-                    set(handles.axes_topo(ax_idx),'Ylim',[-0.5,0.6]);
+                    set(handles.axes_topo(ax_idx),'Ylim',[-4,0]);
                     axis(handles.axes_topo(ax_idx),'square');
                     hold(handles.axes_topo(ax_idx),'on')
                     handles.title_topo(ax_idx)=title(handles.axes_topo(ax_idx),'hello','Interpreter','none');
@@ -2223,7 +2223,7 @@ GLW_my_view_OpeningFcn;
         x2=str2num(get(handles.interval2_edit,'String'));
         
         fig_temp=figure();
-        [xq,yq] = meshgrid(linspace(-0.5,0.5,267),linspace(-0.5,0.5,267));
+        [xq,yq] = meshgrid(linspace(-0.5,0.5,267),linspace(-4,0.5,267));
         delta = (xq(2)-xq(1))/2;
         ax_num=length(userdata.selected_datasets)*length(userdata.selected_epochs);
         row_num=length(userdata.selected_datasets);
@@ -2236,7 +2236,7 @@ GLW_my_view_OpeningFcn;
             axes_topo(ax_idx)=subplot(row_num,col_num,ax_idx);
             colormap( axes_topo(ax_idx),'jet');
             set(axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-            set(axes_topo(ax_idx),'Ylim',[-0.5,0.6]);
+            set(axes_topo(ax_idx),'Ylim',[-4,0]);
             caxis(axes_topo(ax_idx),userdata.last_axis(3:4));
             hold(axes_topo(ax_idx),'on');
             axis(axes_topo(ax_idx),'square');
@@ -2327,7 +2327,7 @@ GLW_my_view_OpeningFcn;
             userdata.auto_y=0;set(handles.yaxis_auto_checkbox,'Value',userdata.auto_y);
         else
             set(event.Axes,'XLim',[-0.55,0.55]);
-            set(event.Axes,'YLim',[-0.5,0.6]);
+            set(event.Axes,'YLim',[-4,0]);
         end
     end
 
