@@ -1452,7 +1452,7 @@ GLW_my_view_OpeningFcn;
                 axes_topo(ax_idx)=subplot(row_num,col_num,ax_idx);
                 colormap(axes_topo(ax_idx),'jet');
                 set(axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-                set(axes_topo(ax_idx),'Ylim',[-4,0]);
+                set(axes_topo(ax_idx),'Ylim',[-4,0.6]);
                 caxis(axes_topo(ax_idx),userdata.last_axis(3:4));
                 hold(axes_topo(ax_idx),'on');
                 axis(axes_topo(ax_idx),'square');
@@ -1548,7 +1548,7 @@ GLW_my_view_OpeningFcn;
                     colormap(handles.axes_topo(ax_idx),'jet');
                     caxis(handles.axes_topo(ax_idx),userdata.last_axis(3:4));
                     set(handles.axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-                    set(handles.axes_topo(ax_idx),'Ylim',[-4,0]);
+                    set(handles.axes_topo(ax_idx),'Ylim',[-4,0.6]);
                     axis(handles.axes_topo(ax_idx),'square');
                     hold(handles.axes_topo(ax_idx),'on')
                     handles.title_topo(ax_idx)=title(handles.axes_topo(ax_idx),'hello','Interpreter','none');
@@ -2236,7 +2236,7 @@ GLW_my_view_OpeningFcn;
             axes_topo(ax_idx)=subplot(row_num,col_num,ax_idx);
             colormap( axes_topo(ax_idx),'jet');
             set(axes_topo(ax_idx),'Xlim',[-0.55,0.55]);
-            set(axes_topo(ax_idx),'Ylim',[-4,0]);
+            set(axes_topo(ax_idx),'Ylim',[-4,0.6]);
             caxis(axes_topo(ax_idx),userdata.last_axis(3:4));
             hold(axes_topo(ax_idx),'on');
             axis(axes_topo(ax_idx),'square');
@@ -2327,7 +2327,7 @@ GLW_my_view_OpeningFcn;
             userdata.auto_y=0;set(handles.yaxis_auto_checkbox,'Value',userdata.auto_y);
         else
             set(event.Axes,'XLim',[-0.55,0.55]);
-            set(event.Axes,'YLim',[-4,0]);
+            set(event.Axes,'YLim',[-4,0.6]);
         end
     end
 
